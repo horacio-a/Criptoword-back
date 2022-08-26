@@ -1,0 +1,67 @@
+<div class="d-flex justify-content-between ">
+    <div style="width: 120px"></div>
+    <div class="saludo">
+        hola {{persona}} bienvenido al administrador
+    </div>
+    <a type="button" class="btn btn-danger" href="/admin/login/logout"> Cerrar sesion</a>
+</div>
+<div class="d-flex justify-content-between ">
+    <div class="saludo">Lista de NFTS</div>
+     <div class="btn-group" role="group" aria-label="Basic example">
+        <a href="/admin/novedades" type="button" class="btn btn-primary">NFT</a>
+        <a href="/admin/mineria" type="button" class="btn btn-primary">Mineria</a>
+    </div>
+    <a href="/admin/novedades/agregar" type="button" class="btn btn-success">Nuevo NFT</a>
+       
+
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">moneda</th>
+            <th scope="col">Coleccion</th>
+            <th scope="col">Propietario</th>
+            <th scope="col">imagen</th>
+
+
+            <th scope="col" class="text-end">Aciones</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#each novedades}}
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{nombre}}</td>
+            <td>{{precio}}</td>
+            <td>{{Moneda}}</td>
+            <td>{{coleccion}}</td>
+            <td>{{propietario}}</td>
+            <td>{{{imagen}}}</td>
+
+
+            <td class="text-end">
+                <a href="/admin/novedades/eliminar/{{id}}" type="button" class="btn btn-danger">Eliminar</a>
+                <a href="/admin/novedades/editar/{{id}}" type="button" class="btn btn-warning"> editar</a>
+
+                {{/each}}
+
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+<nav aria-label="Page navigation example" class="d-flex justify-content-center">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="/admin/novedades">1</a></li>
+        <li class="page-item"><a class="page-link" href="/admin/novedades/2" >2</a></li>
+        <li class="page-item"><a class="page-link" href="/admin/novedades/3">3</a></li>
+    </ul>
+</nav>
+<p></p>
+{{pagina.pagina}}

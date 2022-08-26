@@ -1,0 +1,75 @@
+<a href="/admin/mineria/" type="submit" class="btn btn-primary"> atras</a>
+
+<form action="/admin/mineria/agregar" method="post" enctype="multipart/form-data" style="height: 100%;" class="d-flex align-items-center">
+    <div class="container text-center text-black ">
+        <div class="saludo">
+            Agregar un nuevo un equipo de mineria
+        </div>
+
+        <div class="row mb-3 d-flex justify-content-center ">
+            <label class="col-12 col-form-label">Nombre</label>
+            <div class="col-12 w-25 ">
+                <input type="text" class="form-control" name="nombre">
+            </div>
+        </div>
+
+        <div class="row mb-3 justify-content-center">
+            <label class="col-12 col-form-label">Precio</label>
+            <div class="col-12 w-25 ">
+                <input type="number" step="0.000000001" class="form-control" name="precio">
+            </div>
+        </div>
+
+        <div class="row mb-3 justify-content-center">
+            <label class="col-12 col-form-label">Potencia</label>
+            <div class="col-12 w-25 ">
+                <input type="text" class="form-control" name="potencia">
+            </div>
+        </div>
+
+        <div class="row mb-3 justify-content-center">
+            <label class="col-12 col-form-label">Unidad</label>
+            <div class="col-12 w-25 ">
+                <input type="text" class="form-control" name="unidadpotencia">
+            </div>
+        </div>
+
+        <div class="row mb-3 justify-content-center">
+            <label class="col-12 col-form-label">Imagen</label>
+            <div class="col-12 w-25 ">
+                <input type="file" class="form-control" name="imagen" id="imagen">
+            </div>
+        </div>
+
+        <div class="row mb-3 justify-content-center">
+            <label class="col-12 col-form-label">Tipo</label>
+            <div class="col-12 w-25 ">
+                <input type="text" class="form-control" name="tipo">
+            </div>
+        </div>
+
+        <div class="row mb-3 justify-content-center">
+            <label class="col-12 col-form-label">ganancias</label>
+            <div class="col-12 w-25 ">
+                <input type="number" step="0.000000001" class="form-control" name="ganancia">
+            </div>
+        </div>
+
+        <div class="row mb-3 justify-content-center">
+            <label class="col-12 col-form-label">Consumo</label>
+            <div class="col-12 w-25 ">
+                <input type="number" step="1" class="form-control" name="consumo">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+
+        {{#if error}}
+        <p>{{message}}</p>
+        {{/if}}
+
+    </div>
+
+
+
+</form>
