@@ -3,10 +3,10 @@ var util = require('util');
 
 var pool = mysql.createPool({
     connectionLimit: 10,
-    host: process.env.MYSQL_HOST,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DB_NAME
+    host: 'us-cdbr-east-06.cleardb.net',
+    user: 'b55dee3bdd375f',
+    password: '909d1843',
+    database: 'heroku_904cbceca4ab77d'
 });
 
 
