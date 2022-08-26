@@ -8,6 +8,14 @@ router.get('/', function(req, res, next) {
   })
 });
 
+router.get('/logout', function (req, res, next){
+  req.session.destroy();
+  res.render('admin/login', {
+    layout: 'admin/layout',
+  })
+})
+
+
 router.post('/', async (req, res, next) => {
   try {
     var usuario = req.body.usuario;
@@ -35,13 +43,6 @@ router.post('/', async (req, res, next) => {
 
 
 
-router.get('/logout', function (req, res, next){
-  console.log('hola')
-  req.session.destroy();
-  res.render('admin/login', {
-    layout: 'admin/layout',
-  })
-})
 
 
 module.exports = router;
