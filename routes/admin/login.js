@@ -62,7 +62,9 @@ router.post('/agregar', async (req, res, next) => {
           await usuarioModel.insertUsuario({
             password,
             usuario
+          
         });
+        res.redirect('/admin/novedades')
         }else {
           res.render('admin/nuevousuario', {
               layout: 'admin/layout',
