@@ -59,16 +59,11 @@ router.post('/agregar', async (req, res, next) => {
         if(req.body.password != "" && req.body.usuario != ""){
           pass =  md5(req.body.password) 
           user = req.body.usuario
-        }else if () {
-          
-        }
-        
-      if () {
           await usuarioModel.insertUsuario({
-              ...req.body
-          });
-          res.redirect('/admin/novedades')
-      } else {
+            pass,
+            user
+        });
+        }else {
           res.render('admin/nuevousuario', {
               layout: 'admin/layout',
               error: true,
