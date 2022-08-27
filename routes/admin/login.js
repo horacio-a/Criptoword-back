@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var usuarioModel = require('../../models/usuarioModel')
+var md5 = require('md5');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('admin/login', {
@@ -52,7 +54,16 @@ router.get('/agregar', async function (req, res, next) {
 
 router.post('/agregar', async (req, res, next) => {
   try {
-      if (req.body.usuario != "" && req.body.password != "") {
+        var pass = ''
+        var user = ''
+        if(req.body.password != "" && req.body.usuario != ""){
+          pass =  md5(req.body.password) 
+          user = req.body.usuario
+        }else if () {
+          
+        }
+        
+      if () {
           await usuarioModel.insertUsuario({
               ...req.body
           });
