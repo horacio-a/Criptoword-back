@@ -52,7 +52,7 @@ router.get('/agregar', async function (req, res, next) {
 
 router.post('/agregar', async (req, res, next) => {
   try {
-      if (req.body.usuario != "" && req.body.contraseña != "") {
+      if (req.body.usuario != "" && req.body.password != "") {
           await usuarioModel.insertUsuario({
               ...req.body
           });
