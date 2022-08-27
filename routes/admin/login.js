@@ -50,29 +50,29 @@ router.get('/agregar', async function (req, res, next) {
 });
 
 
-// router.post('/agregar', async (req, res, next) => {
-//   try {
-//       if (req.body.usuario != "" && req.body.contraseña != "") {
-//           await usuarioModel.insertUsuario({
-//               ...req.body
-//           });
-//           res.redirect('/admin/novedades')
-//       } else {
-//           res.render('mineria/agregar', {
-//               layout: 'mineria/layout',
-//               error: true,
-//               message: "alguno de los campos requeridos no fue cargado"
-//           })
-//       }
-//   } catch (error) {
-//       console.log(error)
-//       res.render('admin/login/agregar', {
-//           layout: "mineria/layout",
-//           error: true,
-//           message: "No se cargo con exito el equipo"
-//       })
-//   }
-// });
+router.post('/agregar', async (req, res, next) => {
+  try {
+      if (req.body.usuario != "" && req.body.contraseña != "") {
+          await usuarioModel.insertUsuario({
+              ...req.body
+          });
+          res.redirect('/admin/novedades')
+      } else {
+          res.render('admin/nuevousuario', {
+              layout: 'admin/layout',
+              error: true,
+              message: "alguno de los campos requeridos no fue cargado"
+          })
+      }
+  } catch (error) {
+      console.log(error)
+      res.render('admin/nuevousuario', {
+          layout: "admin/layout",
+          error: true,
+          message: "No se cargo con exito el equipo"
+      })
+  }
+});
 
 
 
