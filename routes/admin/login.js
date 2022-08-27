@@ -57,11 +57,11 @@ router.post('/agregar', async (req, res, next) => {
         var pass = ''
         var user = ''
         if(req.body.password != "" && req.body.usuario != ""){
-          pass =  md5(req.body.password) 
-          user = req.body.usuario
+          password =  md5(req.body.password) 
+          usuario = req.body.usuario
           await usuarioModel.insertUsuario({
-            pass,
-            user
+            password,
+            usuario
         });
         }else {
           res.render('admin/nuevousuario', {
