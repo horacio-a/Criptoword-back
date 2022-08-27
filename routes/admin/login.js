@@ -8,10 +8,10 @@ router.get('/', function(req, res, next) {
   })
 });
 
-router.get('/logout', function (req, res, next){
+router.get('/admin/logout', function (req, res, next){
   req.session.destroy();
   res.render('admin/login', {
-    layout: 'admin/layout',
+    layout: 'admin/layout'
   })
 })
 
