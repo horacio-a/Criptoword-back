@@ -8,8 +8,8 @@ router.get('/', function(req, res, next) {
   })
 });
 
-router.get('/admin/logout', function (req, res, next){
-  req.session.destroy();
+router.get('/logout', function (req, res, next){
+  
   res.render('admin/login', {
     layout: 'admin/layout'
   })
