@@ -1,1 +1,33 @@
-nuevo usuario
+<a href="/admin/novedades/" type="submit" class="btn btn-primary"> atras</a>
+
+<form action="/admin/login/agregar" method="post" enctype="multipart/form-data" style="height: 100%;" class="d-flex align-items-center">
+    <div class="container text-center text-black ">
+        <div class="saludo">
+            Dale credenciales a alguien nuevo
+        </div>
+
+        <div class="row mb-3 d-flex justify-content-center ">
+            <label class="col-12 col-form-label">Usuario</label>
+            <div class="col-12 w-25 ">
+                <input type="text" class="form-control" name="usuario">
+            </div>
+        </div>
+
+        <div class="row mb-3 justify-content-center">
+            <label class="col-12 col-form-label">Contraseña</label>
+            <div class="col-12 w-25 ">
+                <input type="text" class="form-control" name="contraseña">
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+
+        {{#if error}}
+        <p>{{message}}</p>
+        {{/if}}
+
+    </div>
+
+
+
+</form>
