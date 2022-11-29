@@ -25,7 +25,7 @@ router.post('/', async (req, res, next) => {
     var password = req.body.password;
 
     var data = await usuarioModel.getUserByUsernameAndPassword(usuario, password);
-    
+    console.log(data)
     if(data != undefined) {
       req.session.id_usuario =  data.id;
       req.session.nombre = data.usuario;

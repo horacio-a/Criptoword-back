@@ -112,6 +112,8 @@ router.post('/agregar', async (req, res, next) => {
   try {
     var img_id = '';
     if( req.files && Object.keys(req.files).length>0) {
+      console.log(req.files.imagen)
+      console.log(Object.keys(req.files))
       imagen = req.files.imagen;
       img_id = (await uploader(imagen.tempFilePath)).public_id;
     }
