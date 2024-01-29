@@ -18,6 +18,7 @@ var apiRouter = require('./routes/api');
 var mineriaRouter = require('./routes/admin/mineria');
 
 
+
 var app = express();
 
 // view engine setup
@@ -32,16 +33,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
   secret: 'JJEmMcW3JFdf2szpH2whf@#2',
-  cookie: { maxAge: null},
+  cookie: { maxAge: null },
   resave: false,
   saveUninitialized: true
 }))
 
-secured = async (req, res, next) =>{
+secured = async (req, res, next) => {
   try {
-    if(req.session.id_usuario){
+    if (req.session.id_usuario) {
       next();
-    } else{
+    } else {
       res.redirect('/admin/login');
     }
   } catch (error) {
@@ -60,17 +61,17 @@ app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/novedades', secured, adminRouter);
 app.use('/admin/mineria', secured, mineriaRouter);
-app.use('/api',cors(), apiRouter);
+app.use('/api', cors(), apiRouter);
 
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
